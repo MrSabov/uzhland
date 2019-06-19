@@ -1,0 +1,118 @@
+<h1 mat-dialog-title>{{data.title}} User</h1>
+<div mat-dialog-content>
+    <form [formGroup]="createUserForm" novalidate autocomplete="off">
+        <mat-form-field>
+            <mat-label for="login">Login</mat-label>
+            <input matInput id="login" formControlName="login" type="text"/>
+            <mat-error
+                class="form-valid-text"
+                *ngIf="createUserForm.get('login').invalid && createUserForm.get('login').touched">
+                <mat-error *ngIf="createUserForm.get('login')['errors']['required']">
+                    this field can't be empty!
+                </mat-error>
+                <mat-error *ngIf="createUserForm.get('login')['errors']['login']">
+                    Login must be correct!
+                </mat-error>
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label for="email">E-mail</mat-label>
+            <input matInput id="email" formControlName="email" type="text"/>
+            <mat-error
+                class="form-valid-text"
+                *ngIf="createUserForm.get('email').invalid && createUserForm.get('email').touched">
+                <mat-error *ngIf="createUserForm.get('email')['errors']['required']">
+                    this field can't be empty!
+                </mat-error>
+                <mat-error *ngIf="createUserForm.get('email')['errors']['email']">
+                    email must be correct!
+                </mat-error>
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label for="firstName">first name</mat-label>
+            <input matInput id="firstName" formControlName="firstName" type="text"/>
+            <mat-error
+                class="form-valid-text"
+                *ngIf="createUserForm.get('firstName').invalid && createUserForm.get('firstName').touched">
+                <mat-error *ngIf="createUserForm.get('firstName')['errors']['required']">
+                    this field can't be empty!
+                </mat-error>
+                <mat-error *ngIf="createUserForm.get('firstName')['errors']['minlength']">
+                    field can't be less than 2 characters!
+                </mat-error>
+                <mat-error *ngIf="createUserForm.get('firstName')['errors']['maxlength']">
+                    field can't be longer than 32 characters! now {{ createUserForm.get('firstName')['errors']['maxlength']['actualLength'] }}.
+                </mat-error>
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label for="lastName">last name</mat-label>
+            <input matInput id="lastName" formControlName="lastName" type="text"/>
+            <mat-error
+                class="form-valid-text"
+                *ngIf="createUserForm.get('lastName').invalid && createUserForm.get('lastName').touched">
+                <mat-error *ngIf="createUserForm.get('lastName')['errors']['required']">
+                    this field can't be empty!
+                </mat-error>
+                <mat-error *ngIf="createUserForm.get('lastName')['errors']['minlength']">
+                    field can't be less than 2 characters!
+                </mat-error>
+                <mat-error *ngIf="createUserForm.get('lastName')['errors']['maxlength']">
+                    field can't be longer than 32 characters! now {{ createUserForm.get('lastName')['errors']['maxlength']['actualLength'] }}.
+                </mat-error>
+            </mat-error>
+        </mat-form-field>
+        <!-- <mat-form-field>
+            <mat-label for="rolesNames">Roles</mat-label>
+            <mat-select [(value)]="selectedValue" id="rolesNames" formControlName="rolesNames">
+                <mat-option *ngFor="let role of rolesNames" [value]="role.name">{{role.name}}</mat-option>
+            </mat-select>
+        </mat-form-field> -->
+        <mat-form-field>
+            <mat-label for="password">Password</mat-label>
+            <input matInput id="password" formControlName="password" type="text"/>
+            <mat-error
+                class="form-valid-text"
+                *ngIf="createUserForm.get('password').invalid && createUserForm.get('password').touched">
+                <mat-error *ngIf="createUserForm.get('password')['errors']['required']">
+                    this field can't be empty!
+                </mat-error>
+                <mat-error *ngIf="createUserForm.get('password')['errors']['minlength']">
+                    field can't be less than 2 characters!
+                </mat-error>
+                <mat-error *ngIf="createUserForm.get('password')['errors']['maxlength']">
+                    field can't be longer than 32 characters! now {{ createUserForm.get('password')['errors']['maxlength']['actualLength'] }}.
+                </mat-error>
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label for="repeatPassword">Confirm password</mat-label>
+            <input matInput id="repeatPassword" formControlName="repeatPassword" type="text"/>
+            <mat-error
+                class="form-valid-text"
+                *ngIf="createUserForm.get('repeatPassword').invalid && createUserForm.get('repeatPassword').touched">
+                <mat-error *ngIf="createUserForm.get('repeatPassword')['errors']['required']">
+                    this field can't be empty!
+                </mat-error>
+                <mat-error *ngIf="createUserForm.get('repeatPassword')['errors']['minlength']">
+                    field can't be less than 2 characters!
+                </mat-error>
+                <mat-error *ngIf="createUserForm.get('repeatPassword')['errors']['maxlength']">
+                    field can't be longer than 32 characters! now {{ createUserForm.get('repeatPassword')['errors']['maxlength']['actualLength'] }}.
+                </mat-error>
+            </mat-error>
+        </mat-form-field>
+    </form>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="close()">Ooops No</button>
+  <button class="confirm" mat-button
+          *ngIf="!isEdit"
+          [mat-dialog-close]="true"
+          (click)="createUser()" cdkFocusInitial>Save</button>
+  <button class="confirm" mat-button
+          *ngIf="isEdit"
+          [mat-dialog-close]="true"
+          (click)="editUser()" cdkFocusInitial>Save</button>
+</div>

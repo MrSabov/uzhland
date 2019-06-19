@@ -1,0 +1,26 @@
+<div class="table">
+    <div class="table-header">
+        <span>E-mail</span>
+        <span>Name</span>
+        <span>Login</span>
+        <span>Roles</span>
+    </div>
+    <div *ngIf="!isLoader">
+        <div class="table-body" *ngFor="let user of users">
+            <span>{{user?.email}}</span>
+            <span>{{user?.firstName || 'Fname'}} {{user?.lastName || 'Lname'}}</span>
+            <span>{{user?.login}}</span>
+            <span>
+            {{user?.roleNames}}
+                <span class="edit" (click)="onEditUser(user?.id)">edit</span>
+          <span class="delete" (click)="openConfirmDialog(user?.id)">delete</span>
+        </span>
+        </div>
+    </div>
+    <app-loader *ngIf="isLoader"></app-loader>
+</div>
+<div class="button-create_box">
+  <h3>Create user</h3>
+  <button (click)="onCreateUser()">Create</button>
+</div>
+

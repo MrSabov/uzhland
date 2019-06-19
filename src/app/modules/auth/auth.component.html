@@ -1,0 +1,93 @@
+<section class="home">
+    <div class="toolbar">
+        <div class="_logo">
+            <img src="assets/img/home-page/uzhland_logo.png" alt="">
+        </div>
+        <div class="sets">
+            <ul>
+                <li [routerLink]="['/home', 'problems']"
+                    routerLinkActive="active">Задачі</li>
+                <li>Змагання</li>
+                <li>Рейтинг</li>
+                <li>Матеріали</li>
+                <li class="super"
+                    [routerLink]="['/home', 'login']"
+                    routerLinkActive="active">Вхід</li>
+                <li class="super"
+                    [routerLink]="['/home', 'registration']"
+                    routerLinkActive="active">Реєстрація</li>
+            </ul>
+        </div>
+    </div>
+    <div class="auth-block">
+        <h4>Почни змінювати своє життя разом з нами</h4>
+        <router-outlet></router-outlet>
+    </div>
+</section>
+
+<section class="why_all">
+    <div class="left-side">
+            <iframe id="ytplayer" type="text/html" width="550" height="360"
+            src="https://www.youtube.com/watch?v=m2Ux2PnJe6E"
+            frameborder="0"></iframe>
+    </div>
+    <div class="right-side">
+        <h3>
+            Чому всі повинні вивчати програмування?
+        </h3>
+        <p>
+           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minus, asperiores. Non perspiciatis animi, tempora accusantium, dolor illo odit quisquam commodi eum ipsam fugit, obcaecati voluptate consequatur quas officia. Fugit debitis sunt laudantium omnis illum, quo delectus quis! Cumque eveniet facilis perspiciatis dolorem illo itaque consequuntur sunt consectetur nostrum rerum. Maxime, earum maiores, necessitatibus voluptatem autem rem odio libero perspiciatis modi blanditiis quas <br><br>vel iure aliquid tempore sit recusandae repudiandae consequatur ipsam magnam excepturi magni quibusdam veritatis dolorem! Blanditiis enim laboriosam molestias sequi quia dolorum provident minus autem repellendus non! Fugit vel dolores quibusdam cumque, asperiores voluptatibus?
+        </p>
+    </div>
+</section>
+
+<section class="last_news">
+    <h3 class="text-center">Останні новини</h3>
+    <div class="cards">
+        <div class="card">
+            <div class="card__top">
+                <img src="" alt="">
+            </div>
+            <div class="card__footer">
+                <span class="text">Методи рішення задач</span>
+                <span class="show__more">Дізнатись більше ></span>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card__top">
+                <img src="" alt="">
+            </div>
+            <div class="card__footer">
+                <span class="text">Результати VII Олімпіади з програмування</span>
+                <span class="show__more">Дізнатись більше ></span>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card__top">
+                <img src="" alt="">
+            </div>
+            <div class="card__footer">
+                <span class="text">Рекомендації щодо підготовки до олімпіади</span>
+                <span class="show__more">Дізнатись більше ></span>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card__top">
+                <img src="" alt="">
+            </div>
+            <div class="card__footer">
+                <span class="text">Курси PHP для початківців</span>
+                <span class="show__more">Дізнатись більше ></span>
+            </div>
+        </div>
+    </div>
+</section>
+<footer class="home-footer">
+    <div class="logotype">
+        <img class="f-logo" src="assets/img/home-page/uzhland_logo_v2.png" alt="">
+    </div>
+    <div class="some-text">
+        <p>Copyright © 2019. All right reserved.</p>
+        <p>Developed by true coders YF AL VS VM | designed by AS</p>
+    </div>
+</footer>

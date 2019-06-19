@@ -1,0 +1,62 @@
+<div class="content-header">
+  <div class="left-side">
+    <div class="banckmark">
+      Задачі > Мої розвязки > добуток двох чисел
+    </div>
+    <h3>
+      Добуток двох чисел
+      <hr/>
+    </h3>
+    <div class="cases">
+      <div class="input">
+        <span>Вхідні дані</span>
+        <div class="cases__input">
+          {{challenge?.testCases['0']?.input}}
+        </div>
+      </div>
+      <div class="output">
+        <span>Вихідні дані</span>
+        <div class="cases__output">
+          {{challenge?.testCases['0']?.output}}
+        </div>
+      </div>
+    </div>
+    <div class="limits-box">
+      <h6>Обмеження</h6>
+      <div class="limits">
+        <div class="time-limit">
+          <mat-icon aria-hidden="false" aria-label="Example home icon">access_time</mat-icon>
+          <p>{{challenge?.timeLimit}} мс</p>
+        </div>
+        <div class="memory-limit">
+          <mat-icon aria-hidden="false" aria-label="Example home icon">memory</mat-icon>
+          <p>{{challenge?.memoryLimit}} байт</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="right-side"></div>
+</div>
+<div class="content-box">
+  <h3>
+    Відправити рішення
+    <hr/>
+  </h3>
+  <form [formGroup]="solvingProblemForm" *ngIf="!isLoader">
+    <mat-form-field>
+        <mat-label>Мова программування</mat-label>
+        <select matNativeControl
+                required
+                formControlName="language">
+          <option value="CSharp">C#</option>
+        </select>
+    </mat-form-field>
+    <textarea class="code-input" formControlName="sourceCode"></textarea>
+  </form>
+  <div class="buttons-block">
+    <button (click)="sentSolvingProblem()">
+      <mat-icon aria-hidden="false" aria-label="Example home icon">send</mat-icon>
+    </button>
+  </div>
+  <app-loader *ngIf="isLoader"></app-loader>
+</div>

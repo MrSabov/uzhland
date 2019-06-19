@@ -1,0 +1,34 @@
+<div class="content-header">
+  <div class="left-side">
+    <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid architecto ea facilis harum ipsam labore facilis harum ipsam labore...</h3>
+    <a href="problems-content"><span>down</span></a>
+  </div>
+  <div class="right-side"></div>
+</div>
+<div id="problems">
+  <div class="levels">
+    <mat-form-field>
+      <mat-label>Рівень</mat-label>
+      <mat-select [(value)]="selectedLevel" (valueChange)="getChallengesByDiff(selectedLevel)">
+        <mat-option value="0">для новачків</mat-option>
+        <mat-option value="1">середній рівень</mat-option>
+        <mat-option value="2">важкий рівень</mat-option>
+        <mat-option value="all">Всі</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div class="problems-box" *ngIf="!isLoader">
+    <ul class="problems" *ngFor="let challenge of challenges">
+      <a [routerLink]="['/home', 'problem', challenge.id]">
+        <li class="problem">
+          <span>{{challenge?.title}}</span>
+          <span>{{challenge?.difficulty | challengeLevel}}</span>
+          <span>
+            class
+          </span>
+        </li>
+      </a>
+    </ul>
+  </div>
+  <app-loader *ngIf="isLoader"></app-loader>
+</div>

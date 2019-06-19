@@ -1,0 +1,17 @@
+.header {
+    background: linear-gradient(122deg, #b1b0e1, #06fccd);
+}
+
+span.date {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.88;
+    letter-spacing: 0.5px;
+    color: #fff;
+}
+
+@media (max-width: 991px) {
+    .header {
+        left: 140px !important;
+    }
+}

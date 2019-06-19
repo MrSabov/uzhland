@@ -1,0 +1,33 @@
+<div class="challenges-box">
+    <div class="challenges-body">
+        <div class="challenges-header">
+            <span>name</span>
+            <span>difficulty</span>
+            <span>time limit</span>
+            <span>memory limit</span>
+        </div>
+        <div *ngIf="!isLoader">
+            <div class="challenges-footer" *ngFor="let challenge of challenges">
+                <span>
+                    {{challenge?.title}}
+                </span>
+                <span>
+                    {{challenge?.difficulty}}
+                </span>
+                <span>
+                    {{challenge.timeLimit}} ms
+                </span>
+                <span>
+                    {{challenge.memoryLimit}} bytes
+                </span>
+                <p (click)="onChallengeDelete(challenge?.id)">delete</p>
+            </div>
+        </div>
+        <app-loader *ngIf="isLoader"></app-loader>
+    </div>
+</div>
+<div class="button-create_box">
+    <h3>Create challenge</h3>
+    <button [routerLink]="['/admin', 'challenge']"
+            [queryParams]="{ opt: 'create'}">Create</button>
+</div>

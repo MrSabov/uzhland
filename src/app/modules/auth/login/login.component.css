@@ -1,0 +1,13 @@
+.example-card.mat-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+.mat-card-content {
+    width: 80%;
+}
+.mat-card-content .example-full-width {
+    width: 100%;
+}

@@ -1,0 +1,22 @@
+<div class="content-header">
+  <div class="left-side">
+    <div class="banckmark">
+      Задачі > {{challenge?.title}}
+    </div>
+    <h3>
+      Добуток двох чисел
+      <hr/>
+    </h3>
+    <div class="level">Складність: {{challenge?.difficulty | challengeLevel}}</div>
+  </div>
+  <div class="right-side"></div>
+</div>
+<div class="content-box">
+  <h3>
+    Формальне визначення
+    <hr/>
+  </h3>
+  <div class="content" *ngIf="!isLoader"  [innerHtml]="challenge?.description"></div>
+  <app-loader *ngIf="isLoader"></app-loader>
+  <button class="solution_problem" [routerLink]="['/home', 'solving-problem', challenge?.id]">Розвязати задачу</button>
+</div>

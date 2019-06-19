@@ -1,0 +1,45 @@
+<div class="content-header">
+  <div class="left-side">
+    <div class="banckmark">
+      Задачі > Добуток двох чисел > Мої рішення
+    </div>
+    <h3>
+      Добуток двох чисел
+      <hr/>
+    </h3>
+    <div class="limits-box">
+      <h6>Обмеження</h6>
+      <div class="limits">
+        <div class="time-limit">
+          <mat-icon aria-hidden="false" aria-label="Example home icon">access_time</mat-icon>
+          <p>{{challenge?.timeLimit}} мс</p>
+        </div>
+        <div class="memory-limit">
+          <mat-icon aria-hidden="false" aria-label="Example home icon">memory</mat-icon>
+          <p>{{challenge?.memoryLimit}} байт</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="right-side"></div>
+</div>
+<div class="my-solutions">
+  <ul class="solutions" *ngIf="!isLoader">
+    <li class="solution"
+        *ngFor="let solution of solutions; let i = index"
+        [ngClass]="{'done': solution?.generalVerdict === 1}">
+      <span class="solution__header">
+        <p>ID</p>
+        <p>Дата</p>
+        <p>Статус</p>
+      </span>
+      <span class="solution__footer">
+        <p>#{{i+1}}</p>
+        <p>{{solution?.createdAt | date: 'd/M/yy, h:mm a'}}</p>
+        <p *ngIf="solution?.status !== 3">{{solution?.status | challengeStatus}}</p>
+        <p *ngIf="solution?.status === 3">{{solution?.generalVerdict | challengeVerdict}}</p>
+      </span>
+    </li>
+  </ul>
+  <app-loader *ngIf="isLoader"></app-loader>
+</div>

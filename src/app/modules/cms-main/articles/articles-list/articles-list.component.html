@@ -1,0 +1,32 @@
+<div class="articles-box">
+  <div class="title-header">
+    <span>Title</span>
+    <span>Create date</span>
+    <span>Modified date</span>
+  </div>
+  <div *ngIf="!isLoader">
+    <div class="article"
+         *ngFor="let article of articles">
+    <span>
+      {{article?.title || 'some article title'}}
+    </span>
+      <span>
+      {{article?.createdDate | date}}
+    </span>
+      <span>
+      {{article?.modifiedDate | date}}
+        <span (click)="getArticleIdForEdit(article?.id)"
+              [routerLink]="['/admin', 'article']"
+              [queryParams]="{ opt: 'edit'}">Edit</span>
+      <span (click)="onDeleteArticle(article?.id)">Delete</span>
+    </span>
+    </div>
+  </div>
+  <app-loader *ngIf="isLoader"></app-loader>
+</div>
+<div class="button-create_box">
+  <h3>Create article</h3>
+  <button [routerLink]="['/admin', 'article']"
+          [queryParams]="{ opt: 'create'}">Create</button>
+</div>
+

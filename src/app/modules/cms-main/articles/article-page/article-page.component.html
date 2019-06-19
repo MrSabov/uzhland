@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="row pt-5">
+    <div class="col-md-8">
+      <form [formGroup]="articleForm">
+        <mat-form-field class="row-item">
+          <mat-label for="title">Title</mat-label>
+          <input matInput id="title" formControlName="title" type="text">
+<!--          <mat-error-->
+<!--                  class="form-valid-text"-->
+<!--                  *ngIf="loginForm.get('email').invalid && loginForm.get('email').touched">-->
+<!--            <mat-error *ngIf="loginForm.get('email')['errors']['required']">-->
+<!--              this field can't be empty!-->
+<!--            </mat-error>-->
+<!--            <mat-error *ngIf="loginForm.get('email')['errors']['email']">-->
+<!--              enter the correct e-mail!-->
+<!--            </mat-error>-->
+<!--          </mat-error>-->
+        </mat-form-field>
+        <div class="form-group">
+          <label for="content"><h3>Content</h3></label>
+          <quill-editor formControlName="content"></quill-editor>
+        </div>
+      </form>
+    </div>
+  </div>
+  <button *ngIf="!isEdit"
+          (click)="onCreateArticle()">Create</button>
+  <button *ngIf="isEdit"
+          (click)="onEditArticle()">Save</button>
+</div>

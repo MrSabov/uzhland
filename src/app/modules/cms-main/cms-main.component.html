@@ -1,0 +1,37 @@
+<mat-drawer-container class="container-dash" autosize>
+    <mat-drawer #drawer class="sidenav" mode="side">
+        <img class="nav-logo" src="assets/img/home-page/client-side/icons/Logo white.svg">
+        <hr class="nav-line">
+        <button class="nav-btn" [routerLink]="['/admin', 'dashboard']" routerLinkActive="active">Dashboard</button>
+        <button class="nav-btn" [routerLink]="['/admin', 'challenges']" routerLinkActive="active">Challenges list</button>
+        <button class="nav-btn" [routerLink]="['/admin', 'library']" routerLinkActive="active">Library list</button>
+        <button class="nav-btn" [routerLink]="['/admin', 'archive']" routerLinkActive="active">Archive list</button>
+        <button class="nav-btn" [routerLink]="['/admin', 'users']" routerLinkActive="active">Users list</button>
+        <button class="nav-btn" [routerLink]="['/admin', 'articles']" routerLinkActive="active">Articles list</button>
+    </mat-drawer>
+    <div class="sidenav-content">
+        <mat-toolbar color="primary">
+            <button mat-icon-button (click)="drawer.toggle() && toggle()">
+                <mat-icon
+                        *ngIf="!isOpenSidebar">menu</mat-icon>
+                <mat-icon
+                        *ngIf="isOpenSidebar">close</mat-icon>
+            </button>
+
+            <span class="banckmark">{{simpleBanckmark[2]}}</span>
+            <span class="spacer" style="width: 92%"></span>
+            <button mat-icon-button [matMenuTriggerFor]="menu">
+                <mat-icon>more_vert</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu">
+                <button mat-menu-item (click)="logout()">
+                    <mat-icon>logout</mat-icon>
+                    <span>Logout</span>
+                </button>
+            </mat-menu>
+        </mat-toolbar>
+    </div>
+    <div class="container">
+        <router-outlet></router-outlet>
+    </div>
+</mat-drawer-container>

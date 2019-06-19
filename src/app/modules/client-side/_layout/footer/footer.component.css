@@ -1,0 +1,23 @@
+footer.home-footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 45px 2% 10px;
+    background: #ffffff url('../../../../../assets/img/home-page/client-side/images/BG_footer.png') no-repeat right bottom;
+    background-size: contain;
+}
+footer.home-footer .some-text {
+    padding-top: 46px;
+}
+footer.home-footer .some-text h5,
+footer.home-footer .some-text p {
+    color: #ffffff;
+    text-align: right;
+    margin: 0;
+}
+footer.home-footer .logotype {
+    padding: 46px 12px 12px;
+}
+footer.home-footer .logotype img {
+    width: 204px;
+    height: 48px;
+}

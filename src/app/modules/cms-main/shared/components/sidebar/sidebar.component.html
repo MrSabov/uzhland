@@ -1,0 +1,44 @@
+<aside class="sidebar">
+  <div class="sidebar-container">
+      <div class="sidebar-header">
+          <div class="brand">
+              <div class="logo">
+                  <span class="l l1"></span>
+                  <span class="l l2"></span>
+                  <span class="l l3"></span>
+                  <span class="l l4"></span>
+                  <span class="l l5"></span>
+              </div>
+          </div>
+          <div class="user-box">
+            <span class="user-avatar">
+              <img src="assets/img/default-user-avatar.png">
+            </span>
+            <div class="user-info">
+              <div class="user-name">Vitalii Sabo</div>
+              <div class="user-post">Admin</div>
+            </div>
+          </div>
+      </div>
+      <hr class="hr-line">
+      <nav class="menu">
+          <ul class="nav metismenu">
+              <li routerLinkActive="active">
+                <a [routerLink]="['/admin', 'dashboard']"> <i class="fa fa-building-o"></i> Dashboard </a>
+              </li>
+              <li routerLinkActive="active">
+                <a [routerLink]="['/admin', 'users']"> <i class="fa fa-users"></i> Users </a>
+              </li>
+              <li routerLinkActive="active">
+                <a [routerLink]="['/admin', 'challenges']"> <i class="fa fa-flash"></i> Challenges </a>
+              </li>
+              <li routerLinkActive="active">
+                <a [routerLink]="['/admin', 'archive']"> <i class="fa fa-archive"></i> Archive </a>
+              </li>
+              <li routerLinkActive="active">
+                <a [routerLink]="['/admin', 'library']"> <i class="fa fa-book"></i> Library </a>
+              </li>
+          </ul>
+      </nav>
+  </div>
+</aside>

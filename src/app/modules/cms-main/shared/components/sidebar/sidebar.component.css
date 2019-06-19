@@ -1,0 +1,85 @@
+.sidebar {
+    position: fixed;
+    background-color: #ffffff;
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.15);
+    transition: 0.5s;
+}
+
+.brand {
+    display: flex;
+    justify-content: center;
+    padding: 15px 0;
+}
+
+.user-box {
+    display: flex;
+    flex-direction: column;
+}
+
+span.user-avatar {
+    margin: 30px auto 15px;
+    border: 5px solid rgb(192, 189, 189);
+    border-radius: 50%;
+    position: relative;
+    background: no-repeat center center;
+    width: 76px;
+    height: 76px;
+}
+.user-avatar img {
+    width: 100%;
+    height: 100%;
+    -webkit-border-radius: 50em;
+    -moz-border-radius: 50em;
+    border-radius: 50em;
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.user-info .user-name {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.88;
+    letter-spacing: 0.5px;
+}
+.user-info .user-post {
+    font-size: 12px;
+    line-height: 1.67;
+    letter-spacing: 0.4px;
+}
+
+.hr-line {
+    width: 90%;
+    border: solid 0.6px #707070;
+}
+
+.sidebar .nav li a {
+    color: rgb(70, 70, 70);
+    text-decoration: none;
+}
+
+.sidebar .nav li.active a, 
+.sidebar .nav li.active a:hover {
+    background-color: rgb(177, 176, 255)!important;
+    color: #ffffff;
+}
+
+.sidebar .nav li a:hover {
+    background-color: rgb(177, 176, 255);
+    color: #ffffff;
+}
+
+@media (max-width: 991px) { 
+    .sidebar {
+        position: fixed;
+        width: 140px;
+        left: 0;
+    }
+    .nav.metismenu {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+}

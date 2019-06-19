@@ -1,0 +1,42 @@
+<div class="container">
+    <form [formGroup]="challengeForm">
+      <mat-form-field class="row-item">
+        <mat-label for="title">Title</mat-label>
+        <input matInput id="title" formControlName="title" type="text">
+        <!--          <mat-error-->
+        <!--                  class="form-valid-text"-->
+        <!--                  *ngIf="loginForm.get('email').invalid && loginForm.get('email').touched">-->
+        <!--            <mat-error *ngIf="loginForm.get('email')['errors']['required']">-->
+        <!--              this field can't be empty!-->
+        <!--            </mat-error>-->
+        <!--            <mat-error *ngIf="loginForm.get('email')['errors']['email']">-->
+        <!--              enter the correct e-mail!-->
+        <!--            </mat-error>-->
+        <!--          </mat-error>-->
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Difficulty</mat-label>
+        <select matNativeControl required formControlName="difficulty">
+          <option value="0">Easy</option>
+          <option value="1">middle</option>
+          <option value="2">hard</option>
+        </select>
+      </mat-form-field>
+      <mat-form-field class="column-item">
+        <mat-label for="timeLimit">time limit</mat-label>
+        <input matInput id="timeLimit" formControlName="timeLimit" type="number">
+      </mat-form-field>
+      <mat-form-field class="column-item">
+        <mat-label for="memoryLimit">memory limit</mat-label>
+        <input matInput id="memoryLimit" formControlName="memoryLimit" type="number">
+      </mat-form-field>
+      <div class="form-group">
+        <label for="description"><h3>description</h3></label>
+        <quill-editor formControlName="description"></quill-editor>
+      </div>
+    </form>
+</div>
+<button *ngIf="!isEdit"
+        (click)="onCreateChallenge()">Create</button>
+<button *ngIf="isEdit"
+        (click)="onEditArticle()">Save</button>

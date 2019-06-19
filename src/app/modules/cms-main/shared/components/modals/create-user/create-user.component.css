@@ -1,0 +1,25 @@
+.mat-dialog-title { 
+    font-weight: bold;
+    text-align: center;
+}
+.mat-dialog-actions {
+    display: flex;
+    justify-content: space-around
+}
+.mat-dialog-actions button.confirm {
+    padding: 2px 15px;
+    border: 1px solid #b0b0ff;
+    border-radius: 6px;
+    color: #b0b0ff;
+    background-color: #ffffff;
+    font-size: 16px;
+    font-weight: 500;
+    transition: all ease-in-out .4s;
+}
+.mat-dialog-actions button.confirm:hover {
+    background-color: #b0b0ff;
+    color: #ffffff;
+}
+.mat-form-field {
+    width: 90%;
+}

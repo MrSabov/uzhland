@@ -1,0 +1,14 @@
+<div class="toolbar">
+  <div class="_logo">
+    <img src="assets/img/home-page/uzhland_logo.png" alt="">
+  </div>
+  <div class="sets">
+    <ul>
+      <li [routerLink]="['/home', 'problems']"
+          routerLinkActive="active">Задачі</li>
+      <li>Рейтинг</li>
+      <li class="super"
+          (click)="logout()">Вихід</li>
+    </ul>
+  </div>
+</div>
